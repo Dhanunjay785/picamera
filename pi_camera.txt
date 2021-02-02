@@ -1,0 +1,21 @@
+pi_camera
+
+
+from gpiozero import Button
+from picamera import picamera
+from datevtime import date time
+from signal import pause
+
+
+left_Button = Button(2)
+Right_Button = Button(3)
+camera = picamera()
+
+def capture ():
+timestamp =date time.now().isoformat()
+camera.capture('/home/pi/%s.jpg'%tempstamp)
+left_button.when pressed = camera.start_preview
+left_button.when_released = camera.stop_preview
+right_button.when_pressed = capture
+
+pause()
